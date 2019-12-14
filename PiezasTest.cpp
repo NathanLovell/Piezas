@@ -28,12 +28,15 @@ TEST(PiezasTest, dropPiece1)
 TEST(PiezasTest, dropPiece2)
 {
 	Piezas board;
-	ASSERT_EQ(board.dropPiece(2), O);
+	board.dropPiece(1);
+	ASSERT_EQ(board.dropPiece(1), O);
 }
 
 TEST(PiezasTest, dropPiece3)
 {
 	Piezas board;
+	board.dropPiece(1);
+	board.dropPiece(1);
 	ASSERT_EQ(board.dropPiece(3), X);
 }
 
