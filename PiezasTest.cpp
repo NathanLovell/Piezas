@@ -52,7 +52,7 @@ TEST(PiezasTest, dropPiece5)
 	ASSERT_EQ(board.dropPiece(5), Invalid);
 }
 
-TEST(PiezasTest, dropPiece - 1)
+TEST(PiezasTest, dropPieceNegative1)
 {
 	Piezas board;
 	ASSERT_EQ(board.dropPiece(-1), Invalid);
