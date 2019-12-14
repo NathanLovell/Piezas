@@ -82,8 +82,53 @@ TEST(PiezasTest, pieceAtInvalid)
 	ASSERT_EQ(board.pieceAt(-1, 5), Invalid);
 }
 
-TEST(PiezasTest, gameState)
+TEST(PiezasTest, gameStateInvalid)
 {
 	Piezas board;
+	board.dropPiece(3);
 	ASSERT_EQ(board.gameState(), Invalid);
+}
+
+TEST(PiezasTest, gameStateXWin)
+{
+	Piezas board;
+	board.dropPiece(0);
+	board.dropPiece(1);
+	board.dropPiece(0);
+	board.dropPiece(1);
+	board.dropPiece(0);
+	board.dropPiece(2);
+	board.dropPiece(1);
+	board.dropPiece(2);
+	board.dropPiece(2);
+	board.dropPiece(3);
+	board.dropPiece(3);
+	board.dropPiece(3);
+	ASSERT_EQ(board.gameState(), X);
+}
+
+TEST(PiezasTest, gameStateOWin)
+{
+	Piezas board;
+	board.dropPiece(3);
+	board.dropPiece(0);
+	board.dropPiece(1);
+	board.dropPiece(0);
+	board.dropPiece(1);
+	board.dropPiece(0);
+	board.dropPiece(3);
+	board.dropPiece(3);
+	board.dropPiece(2);
+	board.dropPiece(1);
+	board.dropPiece(2);
+	board.dropPiece(2);
+	ASSERT_EQ(board.gameState(), O);
+}
+
+TEST(PiezasTest, reset)
+{
+	Piezas board;
+	board.dropPiece(1);
+	board.reset();
+	ASSERT_EQ(board.pieceAt(0, 1), Blank);
 }
