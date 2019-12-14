@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/NathanLovell/Piezas.svg?branch=master)](https://travis-ci.org/NathanLovell/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/NathanLovell/Piezas/badge.svg?branch=master)](https://coveralls.io/github/NathanLovell/Piezas?branch=master)
+
 # Piezas
 
 ## Associated Enumerated Types
